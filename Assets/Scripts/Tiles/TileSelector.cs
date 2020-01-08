@@ -1,24 +1,37 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace DungeonDice.Tiles
 {
     public class TileSelector : MonoBehaviour
     {
         public bool isSelecting = false;
-        int selectCount = 3;
+        int selectCount = 0;
 
-        delegate void DoSomethingToSelectedTile(Tile tile);
+        public delegate IEnumerator DoSomethingToSelectedTile(Tile tile);
         DoSomethingToSelectedTile DoSomething;
 
-        List<Tile> selectedTiles = new List<Tile>();
+        List<Tile> selectedTiles;
 
+        [SerializeField] GameObject button;
         InstructionMessage instructionMessage;
         public string instructionText;
 
         private void Awake() 
         {
             instructionMessage = FindObjectOfType<InstructionMessage>();
+        }
+
+        public void ActivateTileSelector(DoSomethingToSelectedTile doSomething, int count, string instructionText)
+        {
+            selectedTiles = new List<Tile>();
+            DoSomething = new DoSomethingToSelectedTile(doSomething);
+            selectCount = count;
+            this.instructionText = instructionText;
+
+            isSelecting = true;
+            UpdateMessage();
         }
 
         public void SelectTile(Tile tile)
@@ -31,6 +44,11 @@ namespace DungeonDice.Tiles
             tile.SelectThisTile(true);
 
             UpdateMessage();
+
+            if(selectedTiles.Count >= selectCount)
+            {
+                button.SetActive(true);
+            }
         }
 
         public void UnselectTile(Tile tile)
@@ -39,6 +57,8 @@ namespace DungeonDice.Tiles
             tile.SelectThisTile(false);
 
             UpdateMessage();
+
+            button.SetActive(false);
         }
 
         void UpdateMessage()
@@ -47,6 +67,24 @@ namespace DungeonDice.Tiles
             string messageToUpdate = instructionText + " " + countText;
 
             instructionMessage.UpdateMessage(messageToUpdate);
+        }
+
+        public void Effect()
+        {
+            isSelecting = false;         
+            button.SetActive(false);
+
+            for(int i = 0; i < selectedTiles.Count; i++)
+            {
+                StartCoroutine(DoSomething(selectedTiles[i]));        
+            }
+
+            for(int i = 0; i < selectedTiles.Count; i++)
+            {
+                UnselectTile(selectedTiles[i]);    
+            }       
+
+            instructionMessage.UpdateMessage("");
         }
     }
 }

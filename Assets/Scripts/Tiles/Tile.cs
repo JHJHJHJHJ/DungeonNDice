@@ -9,6 +9,7 @@ namespace DungeonDice.Tiles
         public TileInfo tileInfo;
 
         [Header("Tile State")]
+        public int index = 0;
         public bool isSelected = false;
         public bool isHidden = false;
         public float spriteColor = 1f;

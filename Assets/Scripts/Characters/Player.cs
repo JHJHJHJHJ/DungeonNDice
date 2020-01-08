@@ -8,6 +8,7 @@ namespace DungeonDice.Characters
 {
     public class Player : MonoBehaviour
     {
+        public GameObject playerDice;
         [SerializeField] float moveSpeed = 5f;
         [SerializeField] float restTime = 0.3f;
 
