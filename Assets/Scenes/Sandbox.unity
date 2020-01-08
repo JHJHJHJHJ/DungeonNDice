@@ -400,7 +400,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1167602069 stripped
 Transform:
@@ -820,7 +820,7 @@ PrefabInstance:
     - target: {fileID: 2483332358490286280, guid: 194fedc067f1cf548a3fc00c49119aa3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2483332358490286280, guid: 194fedc067f1cf548a3fc00c49119aa3,
         type: 3}
@@ -1029,7 +1029,7 @@ PrefabInstance:
     - target: {fileID: 5359648304412381270, guid: 38a04537f2e193a42addcb8482bfc77e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5359648304412381270, guid: 38a04537f2e193a42addcb8482bfc77e,
         type: 3}
@@ -1065,7 +1065,31 @@ PrefabInstance:
         type: 3}
       propertyPath: defaultMoveDices.Array.data[2]
       value: 
-      objectReference: {fileID: 7393144346068059372, guid: 399211e9dabe47e459b624ee1db58c88,
+      objectReference: {fileID: 222573964642974893, guid: fb971cafad4d2934189067ebf4c4300e,
+        type: 3}
+    - target: {fileID: 5359648304412381271, guid: 38a04537f2e193a42addcb8482bfc77e,
+        type: 3}
+      propertyPath: defaultCombatDices.Array.data[0]
+      value: 
+      objectReference: {fileID: 474517041097031877, guid: 0e268fd5c335fae4fa53229452f4dbc2,
+        type: 3}
+    - target: {fileID: 5359648304412381271, guid: 38a04537f2e193a42addcb8482bfc77e,
+        type: 3}
+      propertyPath: defaultCombatDices.Array.data[1]
+      value: 
+      objectReference: {fileID: 4095954451980070230, guid: cc38823a045423040bc6af6a6be535d8,
+        type: 3}
+    - target: {fileID: 5359648304412381271, guid: 38a04537f2e193a42addcb8482bfc77e,
+        type: 3}
+      propertyPath: defaultMoveDices.Array.data[0]
+      value: 
+      objectReference: {fileID: 5123297238184304383, guid: 548fdd9e0a49aab40b5307e7c352e422,
+        type: 3}
+    - target: {fileID: 5359648304412381271, guid: 38a04537f2e193a42addcb8482bfc77e,
+        type: 3}
+      propertyPath: defaultMoveDices.Array.data[1]
+      value: 
+      objectReference: {fileID: 3155818698887339271, guid: 382e8d6466e27204b8bfa61481a5db00,
         type: 3}
     - target: {fileID: 5359648304412381289, guid: 38a04537f2e193a42addcb8482bfc77e,
         type: 3}
@@ -1210,7 +1234,7 @@ PrefabInstance:
     - target: {fileID: 6015628097435867517, guid: 3c81387e75c155b4c89792fc52ddf3ef,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6015628097435867517, guid: 3c81387e75c155b4c89792fc52ddf3ef,
         type: 3}
