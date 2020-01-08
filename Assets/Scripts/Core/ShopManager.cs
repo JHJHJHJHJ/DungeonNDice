@@ -1,6 +1,7 @@
 using UnityEngine;
 using DungeonDice.Objects;
 using DungeonDice.Tiles;
+using DungeonDice.Characters;
 
 namespace DungeonDice.Core
 {
@@ -16,6 +17,8 @@ namespace DungeonDice.Core
 
         public void SelectThisItem(GameObject itemSelected)
         {
+            if(!FindObjectOfType<Player>().isShopping) return;
+
             Ground ground = FindObjectOfType<Ground>();
 
             int index = 0;

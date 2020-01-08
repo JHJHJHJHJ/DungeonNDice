@@ -1,5 +1,6 @@
 using UnityEngine;
 using DungeonDice.Characters;
+using System.Collections;
 
 namespace DungeonDice.Dices
 {
